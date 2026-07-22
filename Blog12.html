@@ -1,0 +1,529 @@
+<h1>12. Flask Framework</h1>
+
+<p>
+Flask is a lightweight and powerful web framework written in Python. It is designed to help developers build web applications quickly while keeping the code simple and flexible. Unlike larger frameworks, Flask provides only the essential tools required for web development, allowing developers to choose additional libraries according to their project needs. Because of its simplicity, Flask is one of the best frameworks for beginners who want to learn backend development with Python.
+</p>
+
+<p>
+Flask is widely used for developing APIs, personal websites, dashboards, portfolio websites, small business applications, and even large-scale web applications. Many developers choose Flask because it is easy to learn, highly customizable, and provides complete control over the project structure.
+</p>
+
+<br>
+
+<img src="Flask1.png" alt="Flask Framework Introduction">
+
+<br><br>
+
+<h2>What is Flask?</h2>
+
+<p>
+Flask is an open-source Python web framework created by Armin Ronacher. It follows a minimalistic approach, meaning it includes only the basic features needed to build a web application. Developers can install extra packages whenever additional functionality is required.
+</p>
+
+<p>
+Flask is often called a "micro framework" because it keeps the core framework small while allowing unlimited customization through extensions.
+</p>
+
+<br>
+
+<h2>Why Learn Flask?</h2>
+
+<p>
+Flask is an excellent choice for beginners and professionals because it is easy to understand and extremely flexible.
+</p>
+
+<ul>
+<li>Simple syntax.</li>
+<li>Easy to learn.</li>
+<li>Lightweight framework.</li>
+<li>Highly customizable.</li>
+<li>Excellent for REST APIs.</li>
+<li>Supports many extensions.</li>
+<li>Fast application development.</li>
+<li>Large developer community.</li>
+</ul>
+
+<br>
+
+<h2>Installing Flask</h2>
+
+<p>
+Before installing Flask, make sure Python is already installed on your computer. Flask can be installed using the pip package manager.
+</p>
+
+<pre>
+pip install flask
+</pre>
+
+<p>
+Verify the installation:
+</p>
+
+<pre>
+pip show flask
+</pre>
+
+<p>
+If Flask is installed successfully, information about the installed package will appear.
+</p>
+
+<br>
+
+<h2>Creating Your First Flask Application</h2>
+
+<p>
+One of the biggest advantages of Flask is that your first web application requires only a few lines of code.
+</p>
+
+<pre>
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+
+def home():
+
+    return "Welcome to Flask!"
+
+if __name__ == "__main__":
+
+    app.run(debug=True)
+</pre>
+
+<p>
+Save the file as <strong>app.py</strong> and run:
+</p>
+
+<pre>
+python app.py
+</pre>
+
+<p>
+Open your browser and visit:
+</p>
+
+<pre>
+http://127.0.0.1:5000/
+</pre>
+
+<p>
+You will see the message <strong>"Welcome to Flask!"</strong>.
+</p>
+
+<br>
+
+<h2>Understanding Routes</h2>
+
+<p>
+Routes tell Flask which function should run when a user visits a specific URL. Every route represents a webpage or endpoint.
+</p>
+
+<pre>
+@app.route("/about")
+
+def about():
+
+    return "This is the About Page."
+</pre>
+
+<p>
+Now visiting <strong>/about</strong> will display the About page.
+</p>
+
+<br>
+
+<img src="Flask2.png" alt="Flask Routing">
+
+<br><br>
+
+<h2>Returning HTML</h2>
+
+<p>
+Instead of returning plain text, Flask can also return HTML content.
+</p>
+
+<pre>
+@app.route("/")
+
+def home():
+
+    return """
+
+    <h1>My Flask Website</h1>
+
+    <p>Learning Flask is fun!</p>
+
+    """
+</pre>
+
+<p>
+Although this works, professional developers usually use HTML template files instead of writing HTML directly inside Python code.
+</p>
+
+<br>
+
+<h2>Debug Mode</h2>
+
+<p>
+Debug mode automatically reloads the application whenever changes are made to the code. It also displays detailed error messages, making debugging much easier during development.
+</p>
+
+<pre>
+app.run(debug=True)
+</pre>
+
+<p>
+Debug mode should only be used during development and should always be disabled before deploying a website to a production server.
+</p>
+
+<br>
+
+<h2>Real-Life Example</h2>
+
+<p>
+Suppose you want to build a personal portfolio website with a contact form. Flask can easily handle different pages such as Home, About, Projects, Blog, and Contact while processing user requests efficiently. Because Flask is lightweight, it performs well even for small projects and APIs.
+</p>
+
+<br>
+<h2>Templates in Flask</h2>
+
+<p>
+Templates allow developers to separate Python code from HTML. Instead of writing HTML inside Python files, Flask stores HTML pages inside a <strong>templates</strong> folder. This makes projects cleaner, more organized, and easier to maintain.
+</p>
+
+<p>
+Create a folder named <strong>templates</strong> and add a file called <strong>index.html</strong>.
+</p>
+
+<pre>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Flask Website</title>
+
+</head>
+
+<body>
+
+<h1>Welcome to My Flask Website</h1>
+
+<p>This page is loaded using a Flask template.</p>
+
+</body>
+
+</html>
+</pre>
+
+<p>
+Render the template using:
+</p>
+
+<pre>
+from flask import render_template
+
+@app.route("/")
+
+def home():
+
+    return render_template("index.html")
+</pre>
+
+<br>
+
+<h2>Working with Variables</h2>
+
+<p>
+Flask allows developers to send data from Python to HTML templates. This makes websites dynamic because content can change according to user requests or database records.
+</p>
+
+<pre>
+@app.route("/")
+
+def home():
+
+    return render_template("index.html", name="Asim")
+</pre>
+
+<p>
+Inside <strong>index.html</strong>:
+</p>
+
+<pre>
+<h1>Welcome {{ name }}</h1>
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Welcome Asim
+</pre>
+
+<br>
+
+
+
+<br><br>
+
+<h2>Handling User Input</h2>
+
+<p>
+Flask can receive information submitted by users through HTML forms. This feature is commonly used for contact forms, login pages, registration systems, and search bars.
+</p>
+
+<pre>
+from flask import request
+
+@app.route("/submit", methods=["POST"])
+
+def submit():
+
+    username = request.form["username"]
+
+    return "Hello " + username
+</pre>
+
+<p>
+The <strong>request</strong> object gives access to data sent by the user.
+</p>
+
+<br>
+
+<h2>Dynamic URLs</h2>
+
+<p>
+Dynamic routes allow parts of a URL to change. This is useful for profile pages, blog posts, and product details.
+</p>
+
+<pre>
+@app.route("/user/<name>")
+
+def user(name):
+
+    return "Welcome " + name
+</pre>
+
+<p>
+Example:
+</p>
+
+<pre>
+/user/Ali
+
+Output:
+
+Welcome Ali
+</pre>
+
+<br>
+
+<h2>Connecting Flask with Databases</h2>
+
+<p>
+Flask can work with databases such as SQLite, MySQL, and PostgreSQL. For beginners, SQLite is often the easiest choice because it does not require a separate database server.
+</p>
+
+<pre>
+import sqlite3
+
+connection = sqlite3.connect("students.db")
+</pre>
+
+<p>
+Databases allow applications to store users, products, messages, blog posts, and many other types of information.
+</p>
+
+<br>
+
+<h2>Flask Extensions</h2>
+
+<p>
+Although Flask is lightweight, many powerful extensions are available to add extra functionality.
+</p>
+
+<ul>
+<li>Flask-SQLAlchemy – Database management.</li>
+<li>Flask-Login – User authentication.</li>
+<li>Flask-WTF – Form handling.</li>
+<li>Flask-Mail – Email support.</li>
+<li>Flask-Migrate – Database migrations.</li>
+</ul>
+
+<br>
+
+
+
+<br><br>
+
+<h2>Error Handling</h2>
+
+<p>
+Flask allows developers to create custom error pages that improve the user experience.
+</p>
+
+<pre>
+@app.errorhandler(404)
+
+def not_found(error):
+
+    return "Page Not Found", 404
+</pre>
+
+<p>
+Instead of showing a default browser error, users will see a friendly custom message.
+</p>
+
+<br>
+
+<h2>Real-Life Example</h2>
+
+<p>
+Imagine building an online library system. Visitors can search books, students can register, librarians can add new books, and administrators can manage the entire system. Flask handles user requests, connects with the database, processes information, and displays dynamic web pages efficiently. This flexibility makes Flask a popular choice for small and medium-sized web applications.
+</p>
+
+<br>
+<h2>Deploying a Flask Application</h2>
+
+<p>
+After completing a Flask project, the next step is deployment. Deployment means publishing your web application on a live server so people around the world can access it through the internet. Before deployment, developers should disable debug mode, organize project files, install project dependencies, and test the application thoroughly. Flask applications can be deployed using services such as Render, PythonAnywhere, Railway, VPS servers, or cloud platforms.
+</p>
+
+<pre>
+app.run(debug=False)
+</pre>
+
+<p>
+Debug mode should always be turned off before deploying a production application because it may expose sensitive information to users.
+</p>
+
+<br>
+
+<h2>Project Structure</h2>
+
+<p>
+Keeping a Flask project organized is very important. A clean project structure makes development easier and helps other developers understand your code.
+</p>
+
+<pre>
+project/
+
+│── app.py
+
+│── templates/
+
+│── static/
+
+│── css/
+
+│── js/
+
+│── images/
+
+│── database.db
+
+│── requirements.txt
+</pre>
+
+<p>
+The <strong>templates</strong> folder stores HTML files, while the <strong>static</strong> folder contains CSS, JavaScript, images, and other static resources.
+</p>
+
+<br>
+
+<h2>Best Practices</h2>
+
+<p>
+Following best practices helps developers write clean, secure, and maintainable Flask applications.
+</p>
+
+<ul>
+<li>Use virtual environments for every project.</li>
+<li>Organize templates and static files properly.</li>
+<li>Keep Python code clean and modular.</li>
+<li>Use meaningful variable and function names.</li>
+<li>Validate user input before processing.</li>
+<li>Store sensitive information in environment variables.</li>
+<li>Regularly update project dependencies.</li>
+<li>Use Git and GitHub for version control.</li>
+</ul>
+
+<br>
+
+
+
+<br><br>
+
+<h2>Common Beginner Mistakes</h2>
+
+<ul>
+<li>Running production websites with debug mode enabled.</li>
+<li>Writing HTML directly inside Python files.</li>
+<li>Ignoring error handling.</li>
+<li>Not using templates correctly.</li>
+<li>Mixing business logic with presentation code.</li>
+<li>Keeping secret keys inside source code.</li>
+<li>Not testing routes before deployment.</li>
+</ul>
+
+<br>
+
+<h2>Career Opportunities</h2>
+
+<p>
+Learning Flask can help you start a career in backend web development. Many companies and freelance clients use Flask for APIs, dashboards, automation tools, and business applications.
+</p>
+
+<ul>
+<li>Python Developer</li>
+<li>Backend Developer</li>
+<li>Full Stack Developer</li>
+<li>API Developer</li>
+<li>Software Engineer</li>
+<li>Freelance Web Developer</li>
+</ul>
+
+<br>
+
+<h2>Interview Questions</h2>
+
+<ul>
+<li>What is Flask?</li>
+<li>Why is Flask called a micro framework?</li>
+<li>What is routing in Flask?</li>
+<li>What are templates?</li>
+<li>What is the purpose of the <strong>request</strong> object?</li>
+<li>How do you pass data to templates?</li>
+<li>What are Flask extensions?</li>
+<li>How do you deploy a Flask application?</li>
+</ul>
+
+<br>
+
+<h2>Flask vs Django</h2>
+
+<p>
+Both Flask and Django are excellent Python web frameworks, but they serve different purposes. Flask is lightweight, flexible, and ideal for beginners or small projects. Django is a full-featured framework with built-in tools for authentication, database management, security, and administration. Developers choose the framework based on the project's requirements.
+</p>
+
+<br>
+
+
+
+<br><br>
+
+<h2>Conclusion</h2>
+
+<p>
+Flask is one of the easiest and most flexible Python web frameworks available today. Its lightweight design, simple syntax, and extensive extension ecosystem make it an excellent choice for beginners as well as professional developers. Whether you want to build a portfolio website, REST API, business dashboard, blogging platform, or complete web application, Flask provides all the essential tools needed to create modern and scalable solutions. By practicing regularly and building real-world projects, you can master Flask and take an important step toward becoming a professional Python web developer.
+</p>
+
+<br>
+
+<img src="Flask3.png" alt="Learn Flask Framework">
+
+<br><br>

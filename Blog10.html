@@ -1,0 +1,634 @@
+<h1>10. Object-Oriented Programming (OOP) in Python</h1>
+
+<p>
+Object-Oriented Programming, commonly known as OOP, is one of the most powerful programming paradigms used in modern software development. Instead of writing programs as a collection of separate functions, OOP organizes code into objects and classes. This approach makes programs easier to understand, maintain, reuse, and expand. Almost every large software application, including games, banking systems, e-commerce websites, and social media platforms, uses Object-Oriented Programming.
+</p>
+
+<br>
+
+<img src="Object1.png" alt="Python Object Oriented Programming">
+
+<br><br>
+
+<h2>What is Object-Oriented Programming?</h2>
+
+<p>
+Object-Oriented Programming is a programming style where data and the functions that work with that data are combined into a single unit called an object. Every object belongs to a class, which acts as a blueprint for creating similar objects.
+</p>
+
+<p>
+Instead of focusing only on functions, OOP focuses on objects that represent real-world things. For example, a student, a car, a mobile phone, or a bank account can all be represented as objects in a Python program.
+</p>
+
+<br>
+
+<h2>Why is OOP Important?</h2>
+
+<p>
+As software becomes larger, managing thousands of lines of code becomes difficult. OOP solves this problem by organizing code into reusable classes and objects. This improves readability, reduces duplication, and makes applications easier to maintain.
+</p>
+
+<ul>
+<li>Improves code organization.</li>
+<li>Reduces code duplication.</li>
+<li>Makes programs reusable.</li>
+<li>Simplifies debugging.</li>
+<li>Supports teamwork.</li>
+<li>Makes projects easier to expand.</li>
+<li>Provides better security.</li>
+<li>Used in professional software development.</li>
+</ul>
+
+<br>
+
+<img src="Object2.png" alt="Benefits of OOP">
+
+<br><br>
+
+<h2>Procedural Programming vs Object-Oriented Programming</h2>
+
+<p>
+Procedural programming focuses mainly on functions and instructions, while Object-Oriented Programming focuses on objects that contain both data and behavior.
+</p>
+
+<table border="1">
+<tr>
+<th>Procedural Programming</th>
+<th>Object-Oriented Programming</th>
+</tr>
+
+<tr>
+<td>Function Based</td>
+<td>Object Based</td>
+</tr>
+
+<tr>
+<td>Less Reusable</td>
+<td>Highly Reusable</td>
+</tr>
+
+<tr>
+<td>Difficult for Large Projects</td>
+<td>Ideal for Large Projects</td>
+</tr>
+
+<tr>
+<td>Less Secure</td>
+<td>Better Data Protection</td>
+</tr>
+</table>
+
+<br>
+
+<h2>What is a Class?</h2>
+
+<p>
+A class is a blueprint or template used to create objects. It defines what information an object will store and what actions it can perform.
+</p>
+
+<p>
+Think of a class as a building plan. The plan itself is not a building, but many buildings can be constructed using the same blueprint.
+</p>
+
+<pre>
+class Student:
+
+    pass
+</pre>
+
+<p>
+The <strong>pass</strong> keyword tells Python that the class is currently empty.
+</p>
+
+<br>
+
+<img src="Object4.png" alt="Python Class">
+
+<br><br>
+
+<h2>What is an Object?</h2>
+
+<p>
+An object is an actual instance of a class. Once a class is created, multiple objects can be created from it. Every object has its own data while sharing the same structure defined by the class.
+</p>
+
+<pre>
+class Student:
+
+    pass
+
+student1 = Student()
+
+student2 = Student()
+</pre>
+
+<p>
+Here, <strong>student1</strong> and <strong>student2</strong> are two different objects created from the same class.
+</p>
+
+<br>
+
+<h2>Real-Life Example</h2>
+
+<p>
+Imagine a car showroom. The company designs one blueprint for a specific car model. Thousands of cars are then manufactured using that blueprint. The blueprint represents the class, while each individual car is an object.
+</p>
+
+<br>
+
+<h2>The Constructor (__init__)</h2>
+
+<p>
+The constructor is a special method that automatically runs whenever a new object is created. In Python, the constructor is written using <strong>__init__()</strong>.
+</p>
+
+<pre>
+class Student:
+
+    def __init__(self):
+
+        print("Object Created")
+</pre>
+
+<p>
+Creating an object:
+</p>
+
+<pre>
+student = Student()
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Object Created
+</pre>
+
+<br>
+
+
+
+<br><br>
+
+<h2>Adding Attributes</h2>
+
+<p>
+Attributes are variables that belong to an object. They store information such as name, age, marks, or any other data related to the object.
+</p>
+
+<pre>
+class Student:
+
+    def __init__(self, name, age):
+
+        self.name = name
+
+        self.age = age
+
+student = Student("Ali",18)
+
+print(student.name)
+
+print(student.age)
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Ali
+
+18
+</pre>
+
+<br>
+
+<h2>Methods</h2>
+
+<p>
+Methods are functions that belong to a class. They describe what an object can do.
+</p>
+
+<pre>
+class Student:
+
+    def __init__(self,name):
+
+        self.name = name
+
+    def introduce(self):
+
+        print("My name is", self.name)
+
+student = Student("Ahmed")
+
+student.introduce()
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+My name is Ahmed
+</pre>
+
+<br>
+
+<img src="Object5.png" alt="Python Methods">
+
+<br><br>
+<h2>The <code>self</code> Keyword</h2>
+
+<p>
+One of the first things beginners notice in Python classes is the <strong>self</strong> keyword. The <strong>self</strong> parameter represents the current object of the class. It allows each object to access its own attributes and methods. Every instance of a class has its own data, and <strong>self</strong> ensures that Python knows which object's data is being used.
+</p>
+
+<pre>
+class Student:
+
+    def __init__(self, name):
+
+        self.name = name
+
+    def show(self):
+
+        print(self.name)
+
+student = Student("Ali")
+
+student.show()
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Ali
+</pre>
+
+<br>
+
+
+<br><br>
+
+<h2>Encapsulation</h2>
+
+<p>
+Encapsulation is one of the four main principles of Object-Oriented Programming. It means keeping data and the methods that work on that data together inside a class while protecting important information from being accessed directly. This improves security and prevents accidental changes.
+</p>
+
+<pre>
+class BankAccount:
+
+    def __init__(self, balance):
+
+        self.__balance = balance
+
+    def show_balance(self):
+
+        print(self.__balance)
+
+account = BankAccount(5000)
+
+account.show_balance()
+</pre>
+
+<p>
+In this example, <strong>__balance</strong> is treated as a private attribute, making it harder to access directly from outside the class.
+</p>
+
+<br>
+
+<h2>Inheritance</h2>
+
+<p>
+Inheritance allows one class to use the properties and methods of another class. This promotes code reuse and reduces duplication. The original class is called the <strong>Parent Class</strong>, while the new class is called the <strong>Child Class</strong>.
+</p>
+
+<pre>
+class Animal:
+
+    def speak(self):
+
+        print("Animal makes a sound")
+
+class Dog(Animal):
+
+    pass
+
+dog = Dog()
+
+dog.speak()
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Animal makes a sound
+</pre>
+
+<br>
+
+
+
+<br><br>
+
+<h2>Method Overriding</h2>
+
+<p>
+Sometimes a child class needs to provide its own version of a method already defined in the parent class. This is known as method overriding.
+</p>
+
+<pre>
+class Animal:
+
+    def speak(self):
+
+        print("Animal Sound")
+
+class Cat(Animal):
+
+    def speak(self):
+
+        print("Meow")
+
+cat = Cat()
+
+cat.speak()
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Meow
+</pre>
+
+<br>
+
+<h2>Using the super() Function</h2>
+
+<p>
+The <strong>super()</strong> function allows a child class to call methods or constructors from its parent class. It is commonly used when the child class wants to extend the parent's functionality instead of replacing it completely.
+</p>
+
+<pre>
+class Person:
+
+    def __init__(self, name):
+
+        self.name = name
+
+class Student(Person):
+
+    def __init__(self, name, grade):
+
+        super().__init__(name)
+
+        self.grade = grade
+
+student = Student("Ahmed", "A")
+
+print(student.name)
+
+print(student.grade)
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Ahmed
+
+A
+</pre>
+
+<br>
+
+<h2>Polymorphism</h2>
+
+<p>
+Polymorphism means "many forms." It allows different classes to use methods with the same name while performing different tasks. This makes programs more flexible and easier to extend.
+</p>
+
+<pre>
+class Bird:
+
+    def sound(self):
+
+        print("Chirp")
+
+class Dog:
+
+    def sound(self):
+
+        print("Bark")
+
+animals = [Bird(), Dog()]
+
+for animal in animals:
+
+    animal.sound()
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Chirp
+
+Bark
+</pre>
+
+<br>
+
+<img src="Object6.png" alt="Python Polymorphism">
+
+<br><br>
+
+<h2>Real-Life Example</h2>
+
+<p>
+Imagine a school management system. A <strong>Person</strong> class stores common information such as name and age. A <strong>Student</strong> class inherits from <strong>Person</strong> and adds marks, while a <strong>Teacher</strong> class inherits from the same parent and adds salary and subject. This avoids writing the same code repeatedly and keeps the project organized.
+</p>
+
+<br>
+<h2>Abstraction</h2>
+
+<p>
+Abstraction is one of the four main principles of Object-Oriented Programming. It means hiding unnecessary implementation details and showing only the essential features to the user. This makes programs easier to understand and use because users only interact with what is necessary.
+</p>
+
+<pre>
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+
+    @abstractmethod
+    def start(self):
+        pass
+
+class Car(Vehicle):
+
+    def start(self):
+        print("Car Started")
+
+car = Car()
+car.start()
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Car Started
+</pre>
+
+<br>
+
+
+
+<br><br>
+
+<h2>The Four Pillars of OOP</h2>
+
+<p>
+Every Object-Oriented Programming language is built around four important principles:
+</p>
+
+<ul>
+<li><strong>Encapsulation</strong> – Protecting data inside a class.</li>
+<li><strong>Inheritance</strong> – Reusing code from another class.</li>
+<li><strong>Polymorphism</strong> – One interface with multiple implementations.</li>
+<li><strong>Abstraction</strong> – Hiding unnecessary details.</li>
+</ul>
+
+<br>
+
+<h2>Mini Project Example</h2>
+
+<p>
+The following program creates a simple bank account using Object-Oriented Programming.
+</p>
+
+<pre>
+class BankAccount:
+
+    def __init__(self, owner, balance):
+
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+
+        self.balance += amount
+
+    def withdraw(self, amount):
+
+        self.balance -= amount
+
+    def show_balance(self):
+
+        print("Balance:", self.balance)
+
+account = BankAccount("Ali", 10000)
+
+account.deposit(2000)
+
+account.withdraw(1500)
+
+account.show_balance()
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Balance: 10500
+</pre>
+
+<br>
+
+<h2>Real-Life Applications of OOP</h2>
+
+<p>
+Object-Oriented Programming is widely used in professional software development. Banking systems use classes for customers and accounts, hospitals use classes for doctors and patients, schools use classes for students and teachers, and e-commerce websites use classes for products, customers, and orders. Popular frameworks such as Django and many game development engines also rely heavily on OOP concepts.
+</p>
+
+<br>
+
+<img src="Object2.png" alt="Real World OOP">
+
+<br><br>
+
+<h2>Common Beginner Mistakes</h2>
+
+<ul>
+<li>Confusing a class with an object.</li>
+<li>Forgetting to use the <strong>self</strong> keyword.</li>
+<li>Creating methods without proper parameters.</li>
+<li>Using inheritance when it is unnecessary.</li>
+<li>Ignoring encapsulation and exposing all data.</li>
+<li>Writing very large classes instead of smaller reusable ones.</li>
+</ul>
+
+<br>
+
+<h2>Best Practices</h2>
+
+<ul>
+<li>Keep each class focused on a single responsibility.</li>
+<li>Choose meaningful class and method names.</li>
+<li>Reuse code through inheritance where appropriate.</li>
+<li>Protect important data using encapsulation.</li>
+<li>Write comments and docstrings for complex classes.</li>
+<li>Test every class independently.</li>
+<li>Follow Python naming conventions.</li>
+</ul>
+
+<br>
+
+<h2>Interview Questions</h2>
+
+<ul>
+<li>What is Object-Oriented Programming?</li>
+<li>What is the difference between a class and an object?</li>
+<li>What is the purpose of the <strong>self</strong> keyword?</li>
+<li>What is a constructor in Python?</li>
+<li>Explain encapsulation with an example.</li>
+<li>What is inheritance?</li>
+<li>What is polymorphism?</li>
+<li>What is abstraction?</li>
+<li>What is method overriding?</li>
+<li>Why is OOP important in software development?</li>
+</ul>
+
+<br>
+
+<h2>Conclusion</h2>
+
+<p>
+Object-Oriented Programming is one of the most valuable programming concepts every Python developer should master. It helps organize code into reusable classes and objects, making applications easier to develop, maintain, and expand. By understanding classes, objects, constructors, inheritance, encapsulation, polymorphism, and abstraction, beginners can build a strong foundation for creating professional software. Whether you plan to become a web developer, software engineer, or AI developer, learning OOP will greatly improve your programming skills and prepare you for real-world projects.
+</p>
+
+<br>
+
+
+
+<br><br>
+
+<p>
+Congratulations! You have completed the fundamentals of Object-Oriented Programming in Python. Continue practicing by building projects such as a Student Management System, Library Management System, Banking Application, or Inventory Management System. The more you practice OOP, the more confident you will become in designing professional and scalable software applications.
+</p>

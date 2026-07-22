@@ -1,0 +1,538 @@
+<h1>11. Django Introduction</h1>
+
+<p>
+Django is one of the most powerful and popular web development frameworks built with Python. It allows developers to create secure, scalable, and professional web applications quickly by providing many built-in tools. Instead of writing everything from scratch, Django offers ready-made components for handling databases, user authentication, forms, routing, security, and much more. Because of its speed and reliability, Django is widely used by startups, large companies, and independent developers around the world.
+</p>
+
+<p>
+If you already know Python, learning Django is one of the best ways to begin backend web development. It helps you create dynamic websites where users can register, log in, submit forms, upload files, and interact with databases. Many real-world applications such as blogs, e-commerce websites, school management systems, and social platforms can be built efficiently using Django.
+</p>
+
+<br>
+
+<img src="Django3.png" alt="Django Introduction">
+
+<br><br>
+
+<h2>What is Django?</h2>
+
+<p>
+Django is a high-level Python web framework that follows the principle of "Don't Repeat Yourself (DRY)." This principle encourages developers to reuse code instead of writing the same logic repeatedly. Django also follows the Model-View-Template (MVT) architecture, which separates data, business logic, and user interface into different sections, making projects clean and organized.
+</p>
+
+<p>
+The framework was first released in 2005 and has continued to grow into one of the most trusted frameworks in the Python ecosystem. Thousands of developers rely on Django because it saves development time while maintaining excellent performance and security.
+</p>
+
+<br>
+
+<h2>Why Learn Django?</h2>
+
+<p>
+Learning Django provides many benefits for beginners as well as professional developers. Since many companies use Django for backend development, mastering this framework can open exciting career opportunities.
+</p>
+
+<ul>
+<li>Easy to learn for Python developers.</li>
+<li>Fast web application development.</li>
+<li>Built-in authentication system.</li>
+<li>Excellent security features.</li>
+<li>Powerful database support.</li>
+<li>Scalable architecture.</li>
+<li>Large developer community.</li>
+<li>Perfect for professional web applications.</li>
+</ul>
+
+<br>
+
+<h2>Features of Django</h2>
+
+<p>
+Django includes many built-in features that make web development faster and easier.
+</p>
+
+<ul>
+<li>Automatic Admin Panel.</li>
+<li>ORM (Object Relational Mapper).</li>
+<li>URL Routing System.</li>
+<li>Template Engine.</li>
+<li>User Authentication.</li>
+<li>Session Management.</li>
+<li>Form Handling.</li>
+<li>Cross-Site Request Forgery (CSRF) Protection.</li>
+<li>SQL Injection Protection.</li>
+<li>Excellent Documentation.</li>
+</ul>
+
+<br>
+
+<h2>Installing Django</h2>
+
+<p>
+Before using Django, Python must already be installed on your computer. After verifying Python installation, Django can be installed using the Python package manager called pip.
+</p>
+
+<pre>
+pip install django
+</pre>
+
+<p>
+After installation, verify the installed version using:
+</p>
+
+<pre>
+django-admin --version
+</pre>
+
+<p>
+If Django has been installed successfully, the version number will appear on your screen.
+</p>
+
+<br>
+
+<h2>Creating Your First Django Project</h2>
+
+<p>
+Creating a new Django project requires only one command.
+</p>
+
+<pre>
+django-admin startproject myproject
+</pre>
+
+<p>
+Move into the project folder:
+</p>
+
+<pre>
+cd myproject
+</pre>
+
+<p>
+Run the development server:
+</p>
+
+<pre>
+python manage.py runserver
+</pre>
+
+<p>
+If everything is working correctly, open your browser and visit:
+</p>
+
+<pre>
+http://127.0.0.1:8000/
+</pre>
+
+<p>
+You will see Django's default welcome page, which confirms that your first project has been created successfully.
+</p>
+
+<br>
+
+<img src="Django1.png" alt="Django Project Setup">
+
+<br><br>
+
+<h2>Understanding the Project Structure</h2>
+
+<p>
+When Django creates a new project, it automatically generates several important files and folders.
+</p>
+
+<ul>
+<li><strong>manage.py</strong> – Executes project management commands.</li>
+<li><strong>settings.py</strong> – Contains project settings.</li>
+<li><strong>urls.py</strong> – Defines website routes.</li>
+<li><strong>wsgi.py</strong> – Used for deployment.</li>
+<li><strong>asgi.py</strong> – Supports asynchronous applications.</li>
+</ul>
+
+<p>
+Although these files may seem confusing at first, each one has a specific purpose. As you continue learning Django, you will understand how they work together to build complete web applications.
+</p>
+
+<br>
+
+<h2>Real-Life Example</h2>
+
+<p>
+Imagine creating a school management system. Instead of building login pages, database connections, and an admin dashboard from the beginning, Django already provides many of these features. This allows developers to spend more time building useful functionality instead of repeating common tasks. That is one of the biggest reasons why Django is preferred for professional web development.
+</p>
+
+<br>
+<h2>Understanding Django Apps</h2>
+
+<p>
+A Django project is made up of one or more applications, commonly called apps. Each app is responsible for a specific feature of the website. For example, an e-commerce website may have separate apps for products, customers, orders, payments, and user accounts. This modular structure keeps projects organized and makes development easier.
+</p>
+
+<p>
+Create a new app using the following command:
+</p>
+
+<pre>
+python manage.py startapp blog
+</pre>
+
+<p>
+After creating the app, register it inside the <strong>INSTALLED_APPS</strong> section of <strong>settings.py</strong>.
+</p>
+
+<br>
+
+<h2>Model-View-Template (MVT) Architecture</h2>
+
+<p>
+Django follows the Model-View-Template (MVT) architecture. This design pattern separates different parts of an application, making the code clean, organized, and easy to maintain.
+</p>
+
+<ul>
+<li><strong>Model</strong> – Handles the database and stores data.</li>
+<li><strong>View</strong> – Processes requests and controls business logic.</li>
+<li><strong>Template</strong> – Displays data to users using HTML.</li>
+</ul>
+
+<p>
+When a user visits a webpage, Django receives the request, processes it through the view, retrieves data from the model if needed, and finally displays the result using a template.
+</p>
+
+<br>
+
+<img src="Django2.png" alt="Django MVT Architecture">
+
+<br><br>
+
+<h2>Creating Your First View</h2>
+
+<p>
+A view is simply a Python function that receives a request and returns a response.
+</p>
+
+<pre>
+from django.http import HttpResponse
+
+def home(request):
+
+    return HttpResponse("Welcome to Django!")
+</pre>
+
+<p>
+When this view is connected to a URL, visiting that URL will display the message in the browser.
+</p>
+
+<br>
+
+<h2>Configuring URLs</h2>
+
+<p>
+URLs connect web addresses to specific views. Open <strong>urls.py</strong> and add the following code:
+</p>
+
+<pre>
+from django.urls import path
+from . import views
+
+urlpatterns = [
+
+    path("", views.home),
+
+]
+</pre>
+
+<p>
+Now, visiting the homepage will execute the <strong>home()</strong> view.
+</p>
+
+<br>
+
+<h2>Templates in Django</h2>
+
+<p>
+Templates allow developers to build dynamic web pages using HTML along with Django Template Language (DTL). Instead of writing static HTML pages, templates can display data from the database.
+</p>
+
+<pre>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Home</title>
+
+</head>
+
+<body>
+
+<h1>Welcome to Django</h1>
+
+<p>This page is rendered using a template.</p>
+
+</body>
+
+</html>
+</pre>
+
+<p>
+Templates help separate the website's design from its business logic.
+</p>
+
+<br>
+
+<h2>Working with Models</h2>
+
+<p>
+Models define the structure of data stored in the database. Every model represents a database table.
+</p>
+
+<pre>
+from django.db import models
+
+class Article(models.Model):
+
+    title = models.CharField(max_length=100)
+
+    content = models.TextField()
+</pre>
+
+<p>
+This model creates a table with two fields: <strong>title</strong> and <strong>content</strong>.
+</p>
+
+<br>
+
+<h2>Database Migrations</h2>
+
+<p>
+Whenever you create or modify models, Django must update the database using migrations.
+</p>
+
+<pre>
+python manage.py makemigrations
+
+python manage.py migrate
+</pre>
+
+<p>
+These commands automatically create or update database tables according to your models.
+</p>
+
+<br>
+
+
+<br><br>
+
+<h2>Django Admin Panel</h2>
+
+<p>
+One of Django's most powerful features is its built-in admin panel. Developers can manage users, products, blog posts, and other data without creating a separate dashboard.
+</p>
+
+<p>
+Create an administrator account:
+</p>
+
+<pre>
+python manage.py createsuperuser
+</pre>
+
+<p>
+After entering your username, email, and password, start the server and visit:
+</p>
+
+<pre>
+http://127.0.0.1:8000/admin/
+</pre>
+
+<p>
+Log in with your administrator account to access the Django Admin Dashboard.
+</p>
+
+<br>
+
+<h2>Real-Life Example</h2>
+
+<p>
+Imagine you are creating a blogging website. Instead of manually building a dashboard to publish or edit articles, Django's Admin Panel lets you add, update, or delete blog posts in just a few clicks. This saves development time and allows you to focus on improving your website's features.
+</p>
+
+<br>
+<h2>Working with Forms</h2>
+
+<p>
+Forms are an essential part of almost every web application. They allow users to enter information such as login details, registration data, comments, feedback, and contact messages. Django provides a powerful form system that automatically validates user input, reducing errors and improving security.
+</p>
+
+<pre>
+from django import forms
+
+class ContactForm(forms.Form):
+
+    name = forms.CharField(max_length=100)
+
+    email = forms.EmailField()
+
+    message = forms.CharField(widget=forms.Textarea)
+</pre>
+
+<p>
+Using Django Forms makes it easier to collect and validate information submitted by users.
+</p>
+
+<br>
+
+<h2>Static Files</h2>
+
+<p>
+Static files include CSS, JavaScript, images, fonts, and icons that improve the appearance and functionality of a website. Django provides a dedicated system for managing static files efficiently.
+</p>
+
+<pre>
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</pre>
+
+<p>
+Keeping static files organized helps maintain professional and responsive web applications.
+</p>
+
+<br>
+
+<h2>Django ORM</h2>
+
+<p>
+The Object Relational Mapper (ORM) is one of Django's most powerful features. Instead of writing complex SQL queries, developers interact with the database using simple Python code. This improves readability and reduces development time.
+</p>
+
+<pre>
+Article.objects.create(
+
+    title="Learning Django",
+
+    content="Django makes web development easier."
+
+)
+</pre>
+
+<p>
+Retrieve all records:
+</p>
+
+<pre>
+articles = Article.objects.all()
+</pre>
+
+<p>
+The ORM automatically converts Python code into SQL queries behind the scenes.
+</p>
+
+<br>
+
+
+
+<br><br>
+
+<h2>Security Features</h2>
+
+<p>
+Security is one of Django's biggest strengths. The framework includes built-in protection against many common web vulnerabilities without requiring additional libraries.
+</p>
+
+<ul>
+<li>Protection against SQL Injection.</li>
+<li>Cross-Site Scripting (XSS) protection.</li>
+<li>Cross-Site Request Forgery (CSRF) protection.</li>
+<li>Secure password hashing.</li>
+<li>Session security.</li>
+<li>User authentication system.</li>
+</ul>
+
+<p>
+These features make Django a trusted framework for building secure web applications.
+</p>
+
+<br>
+
+<h2>Deployment Overview</h2>
+
+<p>
+After developing a Django project locally, the next step is deployment. Deployment means publishing your website on a live server so users around the world can access it through the internet. Before deployment, developers usually disable debug mode, configure allowed hosts, collect static files, and connect a production database.
+</p>
+
+<br>
+
+<h2>Career Opportunities</h2>
+
+<p>
+Learning Django can open many career paths in the software industry. Since Django is widely used for backend development, companies actively hire developers with strong Django skills.
+</p>
+
+<ul>
+<li>Django Developer</li>
+<li>Python Backend Developer</li>
+<li>Full Stack Developer</li>
+<li>Software Engineer</li>
+<li>Web Application Developer</li>
+<li>API Developer</li>
+<li>Freelance Web Developer</li>
+</ul>
+
+<br>
+
+
+
+<br><br>
+
+<h2>Common Beginner Mistakes</h2>
+
+<ul>
+<li>Forgetting to run migrations after changing models.</li>
+<li>Not registering apps inside <strong>INSTALLED_APPS</strong>.</li>
+<li>Ignoring virtual environments.</li>
+<li>Mixing business logic with templates.</li>
+<li>Leaving <strong>DEBUG=True</strong> in production.</li>
+<li>Not organizing project files properly.</li>
+</ul>
+
+<br>
+
+<h2>Best Practices</h2>
+
+<ul>
+<li>Use meaningful app names.</li>
+<li>Keep views simple and readable.</li>
+<li>Reuse templates whenever possible.</li>
+<li>Write clean and modular code.</li>
+<li>Use Git and GitHub for version control.</li>
+<li>Follow Django's official project structure.</li>
+<li>Keep sensitive information out of your source code.</li>
+</ul>
+
+<br>
+
+<h2>Interview Questions</h2>
+
+<ul>
+<li>What is Django?</li>
+<li>What is the MVT architecture?</li>
+<li>What is Django ORM?</li>
+<li>What are migrations?</li>
+<li>What is the purpose of <strong>manage.py</strong>?</li>
+<li>What are Django apps?</li>
+<li>What is the Django Admin Panel?</li>
+<li>Why is Django considered secure?</li>
+</ul>
+
+<br>
+
+<img src="Django3.png" alt="Learn Django">
+
+<br><br>
+
+<h2>Conclusion</h2>
+
+<p>
+Django is one of the best Python frameworks for building modern web applications. Its built-in security, powerful ORM, template engine, authentication system, and admin panel allow developers to create professional websites quickly and efficiently. Whether you want to build a personal blog, an online store, a school management system, or a large enterprise application, Django provides the tools needed to develop secure, scalable, and maintainable software. By practicing regularly and building real-world projects, you can master Django and prepare yourself for a successful career in backend and full-stack web development.
+</p>

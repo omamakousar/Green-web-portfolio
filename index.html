@@ -1,0 +1,468 @@
+    
+<htm>
+  <head>
+    <title>My portfolio</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4972109763644921"
+     crossorigin="anonymous"></script>
+    <style>
+      nav{
+        width:100px;
+        height:100px;
+        
+      }
+      body{
+      background-image:url("Pin.jpg");
+      background-attachment:fixed;
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-position:center;
+      }
+        h1{
+    color: green;
+    font-size: 80px;
+    animation: glow 3s infinite;
+        }
+      @keyframes glow{
+
+0%{
+    opacity:0;
+    transform:translateY(-30px);
+    text-shadow:0 0 5px #00ff66;
+}
+
+50%{
+    opacity:1;
+    transform:translateY(0);
+    text-shadow:0 0 20px #00ff66,
+                0 0 40px #00ff66;
+}
+
+100%{
+    opacity:1;
+    transform:translateY(0);
+    text-shadow:0 0 5px #00ff66;
+}
+          }
+      h2{
+        color:white;
+        font-size:30px;
+        
+      }
+      button{
+    background-color:darkgreen;
+    color:white;
+    border:none;
+    border-radius:20px;
+    padding:20px 80px;
+    font-size:50px;
+    font-weight:bold;
+    cursor:pointer;
+      }
+      button{
+    background:green;
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    transition:0.4s;
+    box-shadow:0 0 15px rgba(0,200,83,0.5);
+    position:relative;
+    overflow:hidden;
+}
+
+button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 50px rgba(0,255,100,0.9);
+}
+
+button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:50%;
+    height:100%;
+    background:rgba(255,255,255,0.4);
+    transform:skewX(-50deg);
+    transition:0.7s;
+}
+
+button:hover::before{
+    left:150%;
+  }
+      
+      
+      
+      .slider{
+    position:relative;
+    width:500px;
+    max-width:900px;
+    height:300px;
+    margin:auto;
+    overflow:hidden;
+    border:2px darkgreen;
+}
+
+.slide{
+    position:absolute;
+    width:50%;
+    height:50%;
+    object-fit:cover;
+    border-radius:15px;
+    animation:carousel 15s infinite;
+}
+
+.slide:nth-child(1){animation-delay:0s;}
+.slide:nth-child(2){animation-delay:3s;}
+.slide:nth-child(3){animation-delay:6s;}
+.slide:nth-child(4){animation-delay:9s;}
+.slide:nth-child(5){animation-delay:12s;}
+
+@keyframes carousel{
+    0%{
+        left:15%;
+        transform:scale(1);
+        opacity:1;
+        z-index:3;
+    }
+    25%{
+        left:55%;
+        transform:scale(0.8);
+        opacity:0.6;
+    }
+    50%{
+        left:85%;
+        transform:scale(0.6);
+    }
+    75%{
+        left:-25%;
+        transform:scale(0.6);
+    }
+    100%{
+        left:15%;
+        transform:scale(1);
+        opacity:1;
+        z-index:3;
+    }
+      }
+
+
+
+.hero-image img{
+    width:100%;
+    max-width:900px;
+    height:auto;
+    object-fit:contain;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      }
+      a{
+        font-size:70px;
+        color:white;
+        margin-right:30px;
+      
+        
+      }
+      /* Logo */
+.logo{
+    width:120px;
+  height:auto;
+}
+
+      .ticker{
+    display:flex;
+    align-items:center;
+    background:#111;
+    border:2px solid white;
+    border-radius:10px;
+    overflow:hidden;
+    height:50px;
+}
+
+.ticker-wrap{
+    overflow:hidden;
+    flex:1;
+}
+
+.ticker-text{
+    display:flex;
+    width:max-content;
+    white-space:nowrap;
+    color:white;
+    font-size:18px;
+    animation:scroll 20s linear infinite;
+}
+
+.ticker-text span{
+    padding-right:60px;
+}
+
+@keyframes scroll{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+        }
+      footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:80px;
+    margin-top:100px;
+    border-top:2px solid #00ff66;
+}
+
+footer a{
+    color:#00ff66;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+footer a:hover{
+    color:white;
+    text-decoration:underline;
+          }
+      
+      /* ===================================
+   HOME PAGE RESPONSIVE MEDIA QUERIES
+=================================== */
+
+/* Laptop */
+@media (max-width:992px){
+
+
+
+.hero{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:80px;
+}
+  .hero h2{
+    font-size:60px;
+  }
+
+.hero p{
+    font-size:18px;
+}
+
+.hero img{
+    width:300px;
+    height:auto;
+}
+
+.ticker{
+    height:50px;
+}
+
+.ticker-text{
+    font-size:22px;
+}
+
+  }
+
+
+/* Tablet */
+@media (max-width:768px){
+
+
+
+.hero{
+    padding:60px 15px;
+}
+
+.hero h1{
+    font-size:60px;
+}
+  .hero h2{
+    font-size:50px;
+  }
+
+.hero p{
+    font-size:16px;
+}
+
+.hero img{
+    width:250px;
+}
+
+button{
+    width:100%;
+    max-width:300px;
+}
+
+.ticker{
+    height:45px;
+}
+
+.ticker-text{
+    font-size:18px;
+}
+
+}
+
+
+/* Mobile */
+@media (max-width:480px){
+
+body{
+    overflow-x:hidden;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: white;
+}
+  
+
+
+
+.hero{
+    padding:40px 10px;
+  }
+
+.hero p{
+    font-size:15px;
+    line-height:1.6;
+}
+
+.hero img{
+    width:200px;
+}
+
+button{
+    width:100%;
+    font-size:16px;
+    padding:12px;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+
+
+.slider{
+    width:300%;
+    max-width:1200;px;
+    height:200%;
+  border:2px green;
+}
+
+.slide{
+    width:100%;
+    height:100%;
+  border:2px darkgreen;
+}
+
+
+h1{
+    font-size:50px;
+    animation:glow 2s infinite;
+  color:darkgreen;
+}
+ 
+      h2{
+        color:white;
+        font-size:50px;
+        font-weight:bold;
+      }
+
+.ticker{
+    height:35px;
+}
+
+.ticker-text{
+    font-size:14px;
+}
+}
+
+      
+
+
+      
+    </style>
+  </head>
+  <body>
+        <div class="ticker">
+    <div class="ticker-wrap">
+        <div class="ticker-text">
+            <span>
+                ◆ Welcome to My Portfolio • Python Developer • Frontend Web Developer • HTML • CSS • JavaScript • Responsive Website Design • Clean & Modern User Interface • Fast Performance • Open to Freelance Opportunities • Thank You for Visiting •
+            </span>
+
+            <span>
+                ◆ Welcome to My Portfolio • Python Developer • Frontend Web Developer • HTML • CSS • JavaScript • Responsive Website Design • Clean & Modern User Interface • Fast Performance • Open to Freelance Opportunities • Thank You for Visiting •
+            </span>
+        </div>
+    </div>
+        </div>
+    <nav>
+  <img src="Web.png" alt="Logo" class="logo"></nav>
+      <div class="a">
+        <a href="index1.html">Home</a>
+       <a href="about us.html">About us</a>
+       <a href="Contact.html">Contact</a> 
+        <a href="blog.html">Blogs</a>
+  </div>
+  <h1>Building the web, one line of code at a time.</h1>
+    <a href="hire.html">
+      <button>
+        Hire me
+      </button>
+    </a>
+    <br><br><br>
+    <div class="hero-image">
+    <img src="Portfolio.png" alt="Banner">
+    </div>
+  <h2>Hi, I'm Omama, a passionate Front-End Web Developer, Python Developer, and Data Entry Specialist. I build modern, responsive, and user-friendly websites using HTML, CSS, and JavaScript while continuously improving my Python skills to create practical solutions. I am dedicated to delivering clean, high-quality work with attention to detail and always strive to provide reliable and professional services.</h2>
+    <br><br>
+  <a href="Projects.html">
+  <button>
+    view projects
+  </button>
+  </a>
+    
+    <br><br>
+    <a href="faq.html">«FAQ's
+  </a>
+    <br><br>
+    <a href="Links.html">«Quick links</a>
+    <br><br>
+    <a href="skill.html">«Skills</a>
+    <br><br>
+    <a href="cta.html">«CTA</a>
+    <br><br><br><br><br>
+<div class="slider">
+    <img src="Img1.jpg" class="slide">
+    <img src="Img2.jpg" class="slide">
+    <img src="Img3.jpeg" class="slide">
+    <img src="Img4.png" class="slide">
+    <img src="Img5.jpeg" class="slide">
+</div>
+   <footer>
+  <p>&copy; 2026 Green Web. All Rights Reserved.</p>
+
+  <a href="privacy.html">Privacy Policy</a> |
+  <a href="Terms.html">Terms & Conditions</a> |
+  <a href="disclaimer.html">Disclaimer</a> |
+  <a href="contact.html">Contact</a>
+</footer> 
+
+</body>
+</html>    
+        
+    

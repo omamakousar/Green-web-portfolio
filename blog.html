@@ -1,0 +1,259 @@
+<html>
+  <head>
+    <title>blogd</title>
+    <style>
+      /* BLOG SECTION */
+
+.blog-section{
+    padding:80px 8%;
+    background:#0d0d0d;
+    color:#fff;
+}
+
+.blog-section h1{
+    text-align:center;
+    font-size:45px;
+    color:#00ff66;
+    margin-bottom:15px;
+}
+
+.blog-section p{
+    text-align:center;
+    color:#bfbfbf;
+    margin-bottom:50px;
+    font-size:18px;
+}
+
+.blog-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.blog-card{
+    background:#171717;
+    border:2px solid #00ff66;
+    border-radius:15px;
+    padding:25px;
+    transition:0.4s;
+    box-shadow:0 0 15px rgba(0,255,102,0.15);
+}
+
+.blog-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(0,255,102,0.5);
+}
+
+.blog-card h2{
+    color:#00ff66;
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.blog-card p{
+    text-align:left;
+    color:#d9d9d9;
+    line-height:1.7;
+    margin-bottom:25px;
+    font-size:16px;
+}
+
+.blog-card a{
+    display:inline-block;
+    text-decoration:none;
+    color:#000;
+    background:#00ff66;
+    padding:12px 28px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.blog-card a:hover{
+    background:#fff;
+    color:#00ff66;
+    box-shadow:0 0 15px #00ff66;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.blog-section h1{
+    font-size:34px;
+}
+
+.blog-section p{
+    font-size:16px;
+}
+
+.blog-card{
+    padding:20px;
+}
+
+.blog-card h2{
+    font-size:22px;
+}
+  }
+  footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:80px;
+    margin-top:100px;
+    border-top:2px solid #00ff66;
+}
+
+footer a{
+    color:#00ff66;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+footer a:hover{
+    color:white;
+    text-decoration:underline;
+  }
+    </style>
+  </head>
+  <body>
+<section class="blog-section">
+    <h1>Latest Blog Articles</h1>
+    <p>Explore coding tutorials, web development guides, and programming tips.</p>
+
+    <div class="blog-container">
+
+        <div class="blog-card">
+            <h2>1. HTML for Beginners</h2>
+            <p>Learn the fundamentals of HTML and build your first webpage.</p>
+            <a href="blog1.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>2. CSS Complete Guide</h2>
+            <p>Master layouts, colors, animations, and responsive design.</p>
+            <a href="blog2.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>3. JavaScript Basics</h2>
+            <p>Understand variables, functions, loops, and DOM manipulation.</p>
+            <a href="blog3.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>4. Responsive Web Design</h2>
+            <p>Create websites that work perfectly on all devices.</p>
+            <a href="blog4.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>5. Flexbox Explained</h2>
+            <p>Build modern layouts easily using CSS Flexbox.</p>
+            <a href="blog5.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>6. CSS Grid Layout</h2>
+            <p>Design professional websites with CSS Grid.</p>
+            <a href="blog6.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>7. Git & GitHub Guide</h2>
+            <p>Learn version control and upload projects to GitHub.</p>
+            <a href="blog7.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>8. Python for Beginners</h2>
+            <p>Start programming with Python from scratch.</p>
+            <a href="blog8.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>9. Python Functions</h2>
+            <p>Understand functions and improve code reusability.</p>
+            <a href="blog9.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>10. Object Oriented Programming</h2>
+            <p>Learn classes, objects, inheritance, and polymorphism.</p>
+            <a href="blog10.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>11. Django Introduction</h2>
+            <p>Build powerful web applications using Django.</p>
+            <a href="blog11.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>12. Flask Framework</h2>
+            <p>Create lightweight web applications with Flask.</p>
+            <a href="blog12.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>13. JavaScript DOM</h2>
+            <p>Control webpage elements dynamically with JavaScript.</p>
+            <a href="blog13.html">Read</a>
+        </div>
+
+        <div class="blog-card">
+            <h2>14. API Basics</h2>
+            <p>Understand APIs and how websites communicate.</p>
+            <a href="blog14.html">Read</a>
+        </div>
+
+        <div class="blog-card">
+            <h2>15. Website Performance</h2>
+            <p>Improve loading speed and user experience.</p>
+            <a href="blog15.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>16. SEO for Beginners</h2>
+            <p>Learn how to rank your website on Google.</p>
+            <a href="blog16.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>17. Google AdSense Guide</h2>
+            <p>Tips to prepare your website for AdSense approval.</p>
+            <a href="blog17.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>18. Portfolio Website Tips</h2>
+            <p>Create an attractive and professional portfolio.</p>
+            <a href="blog18.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>19. Frontend Roadmap</h2>
+            <p>Step-by-step guide to becoming a frontend developer.</p>
+            <a href="blog19.html">Read </a>
+        </div>
+
+        <div class="blog-card">
+            <h2>20. Programming Career Guide</h2>
+            <p>Start your journey as a successful software developer.</p>
+            <a href="blog20.html">Read </a>
+        </div>
+
+    </div>
+</section>
+    <footer>
+  <p>&copy; 2026 Green Web. All Rights Reserved.</p>
+
+  <a href="privacy.html">Privacy Policy</a> |
+  <a href="Terms.html">Terms & Conditions</a> |
+  <a href="disclaimer.html">Disclaimer</a> |
+  <a href="contact.html">Contact</a>
+</footer> 
+    
+  </body>
+</html>

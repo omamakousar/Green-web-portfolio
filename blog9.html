@@ -1,0 +1,630 @@
+<h1>9. Python Functions</h1>
+
+<p>
+Functions are one of the most important concepts in Python programming. A function is a reusable block of code that performs a specific task. Instead of writing the same code repeatedly, developers write it once inside a function and call it whenever needed. Functions make programs shorter, cleaner, easier to understand, and easier to maintain.
+</p>
+
+<br>
+
+<img src="Python6.png" alt="Python Functions">
+
+<br><br>
+
+<h2>What is a Function?</h2>
+
+<p>
+A function is a named block of code that executes only when it is called. It can accept input values called parameters, perform a task, and optionally return a result.
+</p>
+
+<p>
+Imagine you are making tea every morning. Instead of remembering every single step each time, you simply follow one routine. In programming, that routine is called a function.
+</p>
+
+<br>
+
+<h2>Why Are Functions Important?</h2>
+
+<p>
+Functions provide many advantages for programmers. They reduce code duplication, improve readability, and make debugging much easier. Professional software developers use functions in almost every project because they make applications modular and organized.
+</p>
+
+<ul>
+<li>Reduce repeated code.</li>
+<li>Improve readability.</li>
+<li>Make debugging easier.</li>
+<li>Increase code reusability.</li>
+<li>Simplify large programs.</li>
+<li>Save development time.</li>
+<li>Improve teamwork.</li>
+<li>Make programs easier to maintain.</li>
+</ul>
+
+<br>
+
+<img src="Python3.webp" alt="Benefits of Functions">
+
+<br><br>
+
+<h2>Creating Your First Function</h2>
+
+<p>
+In Python, functions are created using the <strong>def</strong> keyword.
+</p>
+
+<pre>
+def greet():
+
+    print("Welcome to Python!")
+</pre>
+
+<p>
+Nothing happens until the function is called.
+</p>
+
+<pre>
+greet()
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Welcome to Python!
+</pre>
+
+<br>
+
+<h2>Functions with Parameters</h2>
+
+<p>
+Parameters allow functions to receive information from the user or another part of the program.
+</p>
+
+<pre>
+def greet(name):
+
+    print("Hello", name)
+
+greet("Ali")
+
+greet("Ahmed")
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Hello Ali
+
+Hello Ahmed
+</pre>
+
+<p>
+This makes one function useful for many different inputs.
+</p>
+
+<br>
+
+<img src="Python1.jpg" alt="Function Parameters">
+
+<br><br>
+
+<h2>Functions with Multiple Parameters</h2>
+
+<p>
+A function can receive more than one parameter.
+</p>
+
+<pre>
+def student(name, age):
+
+    print("Name:", name)
+
+    print("Age:", age)
+
+student("Sara", 17)
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Name: Sara
+
+Age: 17
+</pre>
+
+<br>
+
+<h2>Returning Values</h2>
+
+<p>
+Many functions calculate a result and return it using the <strong>return</strong> keyword.
+</p>
+
+<pre>
+def add(a, b):
+
+    return a + b
+
+result = add(10, 15)
+
+print(result)
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+25
+</pre>
+
+<p>
+Using <strong>return</strong> allows the result to be stored in a variable and used later in the program.
+</p>
+
+<br>
+
+<img src="Python2.png" alt="Return Statement">
+
+<br><br>
+
+<h2>Real-Life Example</h2>
+
+<p>
+Suppose a school management system needs to calculate the total marks of hundreds of students. Instead of writing the addition code repeatedly, a function named <strong>calculate_total()</strong> can perform the calculation whenever required. This saves time and reduces errors.
+</p>
+
+<br>
+<h2>Default Parameters</h2>
+
+<p>
+Python allows functions to have default parameter values. If the user does not provide an argument, Python automatically uses the default value. This makes functions more flexible and easier to use.
+</p>
+
+<pre>
+def greet(name="Guest"):
+
+    print("Welcome", name)
+
+greet()
+
+greet("Ali")
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Welcome Guest
+
+Welcome Ali
+</pre>
+
+<br>
+
+<img src="Python4.png" alt="Default Parameters">
+
+<br><br>
+
+<h2>Keyword Arguments</h2>
+
+<p>
+Keyword arguments allow values to be passed by parameter name instead of position. This improves readability and reduces mistakes.
+</p>
+
+<pre>
+def student(name, age):
+
+    print(name)
+
+    print(age)
+
+student(age=18, name="Ahmed")
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Ahmed
+
+18
+</pre>
+
+<br>
+
+<h2>Positional Arguments</h2>
+
+<p>
+Normally, Python matches arguments according to their position.
+</p>
+
+<pre>
+def multiply(a, b):
+
+    print(a * b)
+
+multiply(6, 4)
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+24
+</pre>
+
+<br>
+
+<h2>Using *args</h2>
+
+<p>
+Sometimes you don't know how many arguments a function will receive. The <strong>*args</strong> parameter collects multiple values into a tuple.
+</p>
+
+<pre>
+def total(*numbers):
+
+    print(sum(numbers))
+
+total(5,10)
+
+total(5,10,15,20)
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+15
+
+50
+</pre>
+
+<br>
+
+<img src="Python9.png" alt="Python Args">
+
+<br><br>
+
+<h2>Using **kwargs</h2>
+
+<p>
+The <strong>**kwargs</strong> parameter collects keyword arguments into a dictionary.
+</p>
+
+<pre>
+def profile(**data):
+
+    print(data)
+
+profile(name="Ali", age=20, city="Lahore")
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+{'name':'Ali','age':20,'city':'Lahore'}
+</pre>
+
+<br>
+
+<h2>Local Variables</h2>
+
+<p>
+A local variable is created inside a function and can only be used within that function.
+</p>
+
+<pre>
+def demo():
+
+    message = "Hello"
+
+    print(message)
+
+demo()
+</pre>
+
+<p>
+Trying to use <strong>message</strong> outside the function will produce an error because it only exists inside the function.
+</p>
+
+<br>
+
+<h2>Global Variables</h2>
+
+<p>
+A global variable is created outside every function and can be accessed by multiple functions.
+</p>
+
+<pre>
+name = "Python"
+
+def show():
+
+    print(name)
+
+show()
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+Python
+</pre>
+
+<br>
+
+<img src="python7.png" alt="Local and Global Variables">
+
+<br><br>
+
+<h2>Lambda Functions</h2>
+
+<p>
+A lambda function is a small anonymous function written in a single line. It is useful for short operations where creating a normal function is unnecessary.
+</p>
+
+<pre>
+square = lambda x: x * x
+
+print(square(8))
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+64
+</pre>
+
+<br>
+
+<h2>Recursive Functions</h2>
+
+<p>
+A recursive function is a function that calls itself until a stopping condition is reached. Recursion is commonly used in mathematical calculations and tree-based algorithms.
+</p>
+
+<pre>
+def countdown(n):
+
+    if n == 0:
+
+        print("Finished")
+
+    else:
+
+        print(n)
+
+        countdown(n-1)
+
+countdown(5)
+</pre>
+
+<br>
+
+<img src="Python6.png" alt="Python Recursion">
+
+<br><br>
+
+<h2>Real-Life Example</h2>
+
+<p>
+Imagine an online shopping website. Instead of writing separate code to calculate the total price for every customer, developers create a single function like <strong>calculate_total()</strong>. Every time a customer places an order, the same function is called with different values. This reduces repetition and keeps the program organized.
+</p>
+
+<br>
+
+<h2>Common Beginner Mistakes</h2>
+
+<ul>
+<li>Forgetting to call a function after creating it.</li>
+<li>Using incorrect indentation.</li>
+<li>Passing the wrong number of arguments.</li>
+<li>Confusing <strong>print()</strong> with <strong>return</strong>.</li>
+<li>Using global variables unnecessarily.</li>
+<li>Choosing unclear function names.</li>
+</ul>
+
+<br>
+<h2>Built-in Functions</h2>
+
+<p>
+Python provides many built-in functions that are ready to use. These functions save time because developers do not need to create them manually. They perform common tasks such as displaying output, finding the length of data, sorting values, calculating sums, and converting data types.
+</p>
+
+<pre>
+numbers = [10, 20, 30, 40]
+
+print(len(numbers))
+print(max(numbers))
+print(min(numbers))
+print(sum(numbers))
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+4
+40
+10
+100
+</pre>
+
+<br>
+
+<img src="Python5.png" alt="Built-in Functions">
+
+<br><br>
+
+<h2>User-Defined Functions</h2>
+
+<p>
+User-defined functions are functions created by programmers to solve specific problems. Unlike built-in functions, these are written according to the requirements of a project.
+</p>
+
+<pre>
+def area(length, width):
+
+    return length * width
+
+print(area(8, 5))
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+40
+</pre>
+
+<br>
+
+<h2>Docstrings</h2>
+
+<p>
+A docstring is a special string written inside a function to explain its purpose. It helps other developers understand what the function does without reading all of the code.
+</p>
+
+<pre>
+def multiply(a, b):
+    """Returns the product of two numbers."""
+
+    return a * b
+</pre>
+
+<br>
+
+<h2>Type Hints</h2>
+
+<p>
+Type hints make code easier to understand by indicating the expected data types of parameters and return values. Although Python does not enforce them, they improve code readability and help development tools detect mistakes.
+</p>
+
+<pre>
+def add(a: int, b: int) -> int:
+
+    return a + b
+
+print(add(10, 15))
+</pre>
+
+<br>
+
+<img src="Python4.png" alt="Python Type Hints">
+
+<br><br>
+
+<h2>Mini Project Example</h2>
+
+<p>
+The following example demonstrates a simple calculator using functions.
+</p>
+
+<pre>
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    return a / b
+
+print(add(10, 5))
+print(subtract(10, 5))
+print(multiply(10, 5))
+print(divide(10, 5))
+</pre>
+
+<p>
+Output:
+</p>
+
+<pre>
+15
+5
+50
+2.0
+</pre>
+
+<br>
+
+<img src="Python2.png" alt="lculator Project">
+
+<br><br>
+
+<h2>Interview Questions</h2>
+
+<p>
+If you are preparing for programming interviews, you should understand the following questions related to Python functions:
+</p>
+
+<ul>
+<li>What is a function in Python?</li>
+<li>What is the difference between <strong>print()</strong> and <strong>return</strong>?</li>
+<li>What are parameters and arguments?</li>
+<li>What is recursion?</li>
+<li>What are lambda functions?</li>
+<li>What is the difference between local and global variables?</li>
+<li>What are <strong>*args</strong> and <strong>**kwargs</strong>?</li>
+<li>Why are functions important in software development?</li>
+</ul>
+
+<br>
+
+<h2>Best Practices</h2>
+
+<ul>
+<li>Choose meaningful function names.</li>
+<li>Keep each function focused on one task.</li>
+<li>Write docstrings for important functions.</li>
+<li>Avoid unnecessary global variables.</li>
+<li>Reuse functions instead of copying code.</li>
+<li>Test every function before using it in large projects.</li>
+<li>Keep functions short and readable.</li>
+<li>Follow Python naming conventions (snake_case).</li>
+</ul>
+
+<br>
+
+<img src="Python3.webp="Python Best Practices">
+
+<br><br>
+
+<h2>Conclusion</h2>
+
+<p>
+Functions are one of the most powerful features of Python. They help developers organize code, reduce repetition, improve readability, and make programs easier to maintain. Whether you are creating a simple calculator or a large web application, functions play an essential role in writing clean and professional code. By understanding parameters, return values, recursion, lambda functions, and best practices, beginners can build a strong programming foundation and prepare themselves for advanced Python concepts such as object-oriented programming, web development, automation, and artificial intelligence.
+</p>
+
+<br>
+
+<img src="Python1.jpg" alt="Python Functions Learning">
+
+<br><br>
+
+<p>
+Congratulations! You have now learned the fundamentals of Python functions. Continue practicing by creating small projects, solving programming challenges, and applying functions in real-world applications. Consistent practice is the key to becoming a skilled Python developer.
+</p>

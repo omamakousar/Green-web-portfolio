@@ -1,0 +1,403 @@
+
+  <head>
+    <title>github</title>
+    <style>
+  img{
+    font-size:30px;
+    background-attachment: fixed;
+  }
+  </style>
+  </head>
+
+<h1>7. Git & GitHub Guide</h1>
+
+<p>
+Git and GitHub are two of the most important tools in modern software development. Every professional developer uses them to manage code, track changes, collaborate with teams, and safely store projects online. Whether you are a beginner learning HTML and CSS or an experienced Python developer, understanding Git and GitHub is an essential skill.
+</p>
+
+<br>
+
+<img src="Github1.png" alt="Introduction" width="250px">
+
+<br><br>
+
+<p>
+Many beginners think Git and GitHub are the same thing, but they are different. Git is a version control system that runs on your computer and records every change made to your project. GitHub is an online platform where Git repositories are stored, shared, and managed.
+</p>
+
+<p>
+Imagine writing a book. Every day you make changes to different chapters. Instead of creating dozens of files like Book Final, Book Final 2, Book Final Latest, Git automatically saves every version. If something goes wrong, you can return to an earlier version in seconds.
+</p>
+
+<br>
+
+<h2>What is Git?</h2>
+
+<p>
+Git is a distributed version control system created by Linus Torvalds. It helps developers keep track of every modification made to their files. Every save can become a checkpoint that allows you to compare changes, restore previous versions, or work on new features without damaging the main project.
+</p>
+
+<p>
+Git works locally on your computer, meaning you don't need an internet connection to record changes. This makes it fast, reliable, and extremely powerful.
+</p>
+
+<br>
+
+<img src="Github2.png" alt="Git Workflow" width="250px">
+
+<br><br>
+
+<h2>What is GitHub?</h2>
+
+<p>
+GitHub is a cloud-based platform that stores Git repositories online. It allows developers to upload projects, collaborate with others, review code, report issues, and maintain open-source software. Millions of developers around the world use GitHub every day.
+</p>
+
+<p>
+If Git is your notebook, GitHub is the cloud backup where your notebook is safely stored and can be shared with anyone.
+</p>
+
+<br>
+
+<h2>Why Should You Learn Git?</h2>
+
+<p>
+Learning Git offers many advantages:
+</p>
+
+<ul>
+<li>Track every change in your code.</li>
+<li>Restore previous versions if mistakes happen.</li>
+<li>Work on multiple features safely.</li>
+<li>Collaborate with teams.</li>
+<li>Improve job opportunities.</li>
+<li>Create a professional portfolio.</li>
+<li>Share projects with clients.</li>
+<li>Backup important work online.</li>
+</ul>
+
+<br>
+
+<h2>Installing Git</h2>
+
+<p>
+Installing Git is simple. Visit the official Git website, download the installer for your operating system, and complete the installation. After installation, open the terminal or command prompt and verify it using:
+</p>
+
+<pre>
+git --version
+</pre>
+
+<p>
+If Git is installed correctly, it will display the installed version number.
+</p>
+
+<br>
+
+<h2>Creating Your First Repository</h2>
+
+<p>
+A repository is simply a project folder managed by Git.
+</p>
+
+<pre>
+mkdir MyProject
+cd MyProject
+git init
+</pre>
+
+<p>
+The command <strong>git init</strong> creates a new Git repository inside your project folder.
+</p>
+
+<br>
+
+<img src="Github3.png" alt="Git Init Example" width="250px">
+
+<br><br>
+
+<h2>Understanding Git Status</h2>
+
+<p>
+One of the first commands every developer learns is:
+</p>
+
+<pre>
+git status
+</pre>
+
+<p>
+This command tells you which files have changed, which files are new, and whether everything has been committed or not.
+</p>
+
+<p>
+Example:
+</p>
+
+<pre>
+git status
+
+Output:
+
+new file: index.html
+modified: style.css
+</pre>
+
+<p>
+This information helps developers know exactly what has changed before saving their work.
+</p>
+
+<br>
+
+<h2>Adding Files</h2>
+
+<p>
+Before Git saves changes permanently, files must first be added to the staging area.
+</p>
+
+<pre>
+git add index.html
+</pre>
+
+<p>
+To add every file:
+</p>
+
+<pre>
+git add .
+</pre>
+
+<p>
+The dot means "add everything in the current folder."
+</p>
+
+<br>
+<h2>Saving Changes with Commit</h2>
+
+<p>
+After adding files to the staging area, the next step is creating a commit. A commit is like taking a snapshot of your project. Every commit records the current state of your files so you can return to it later if needed.
+</p>
+
+<pre>
+git commit -m "Added homepage"
+</pre>
+
+<p>
+The <strong>-m</strong> flag allows you to write a short message describing what changes were made. Always use meaningful commit messages because they make your project's history easier to understand.
+</p>
+
+<p>
+Good Examples:</p>
+
+<pre>
+git commit -m "Created login page"
+
+git commit -m "Fixed navigation menu"
+
+git commit -m "Improved responsive design"
+</pre>
+
+<p>
+Bad Examples:</p>
+
+<pre>
+git commit -m "Update"
+
+git commit -m "Done"
+
+git commit -m "Final"
+</pre>
+
+<br>
+
+<img src="Github4.png" alt="Git Commit" width="250px">
+
+<br><br>
+
+<h2>Viewing Commit History</h2>
+
+<p>
+Git stores every commit in the repository. You can view the complete history using:
+</p>
+
+<pre>
+git log
+</pre>
+
+<p>
+The output includes the commit ID, author's name, date, and commit message. This history allows developers to understand how a project has evolved over time.
+</p>
+
+<br>
+
+<h2>Connecting Git with GitHub</h2>
+
+<p>
+Once your project is ready, you can upload it to GitHub so it is stored online. First, create a new repository on GitHub. Then connect your local repository using:
+</p>
+
+<pre>
+git remote add origin https://github.com/username/project.git
+</pre>
+
+<p>
+After connecting, upload your project with:
+</p>
+
+<pre>
+git push -u origin main
+</pre>
+
+<p>
+Your entire project will now be available on your GitHub account where you can access it from any computer.
+</p>
+
+<br>
+
+<img src="Github1.png" alt="Uploading to GitHub" width="250px">
+
+<br><br>
+
+<h2>Cloning a Repository</h2>
+
+<p>
+Sometimes you want to download an existing GitHub project to your computer. This is called cloning.
+</p>
+
+<pre>
+git clone https://github.com/username/project.git
+</pre>
+
+<p>
+Git automatically downloads every file along with the complete commit history.
+</p>
+
+<br>
+
+<h2>Pulling Latest Changes</h2>
+
+<p>
+If another developer updates the project on GitHub, you can download the latest changes using:
+</p>
+
+<pre>
+git pull origin main
+</pre>
+
+<p>
+This command keeps your local project synchronized with the online repository.
+</p>
+
+<br>
+
+<h2>Pushing New Changes</h2>
+
+<p>
+After making new commits, upload them again using:
+</p>
+
+<pre>
+git push
+</pre>
+
+<p>
+This sends your latest work to GitHub.
+</p>
+
+<br>
+
+<h2>Working with Branches</h2>
+
+<p>
+Branches allow developers to work on new features without affecting the main project. This makes development safer and more organized.
+</p>
+
+<pre>
+git branch feature-login
+
+git checkout feature-login
+</pre>
+
+<p>
+You can also create and switch in one command:
+</p>
+
+<pre>
+git checkout -b feature-login
+</pre>
+
+<br>
+
+<img src="Github3.png" alt="Git Branches" width="250px">
+
+<br><br>
+
+<h2>Merging Branches</h2>
+
+<p>
+When a feature is complete, it can be merged into the main branch.
+</p>
+
+<pre>
+git checkout main
+
+git merge feature-login
+</pre>
+
+<p>
+This combines both branches into one updated project.
+</p>
+
+<br>
+
+<h2>Real-Life Example</h2>
+
+<p>
+Imagine you are creating a portfolio website. On Monday you finish the homepage and commit it. On Tuesday you create the About page and commit again. On Wednesday you redesign the navigation bar but accidentally break the website. Instead of rebuilding everything, Git allows you to return to Monday's or Tuesday's version within seconds.
+</p>
+
+<p>
+This is why professional developers depend on Git every day.
+</p>
+
+<br>
+
+<h2>Common Beginner Mistakes</h2>
+
+<ul>
+<li>Forgetting to commit changes.</li>
+<li>Using meaningless commit messages.</li>
+<li>Uploading unnecessary files.</li>
+<li>Working directly on the main branch.</li>
+<li>Ignoring Git status before pushing.</li>
+<li>Creating repositories without a README file.</li>
+</ul>
+
+<br>
+
+<h2>Best Practices</h2>
+
+<ul>
+<li>Commit your work regularly.</li>
+<li>Write clear commit messages.</li>
+<li>Create separate branches for new features.</li>
+<li>Push your work to GitHub frequently.</li>
+<li>Keep your repository organized.</li>
+<li>Use meaningful file names.</li>
+<li>Review changes before committing.</li>
+<li>Always maintain a backup on GitHub.</li>
+</ul>
+
+<br>
+
+<img src="Github7.png" alt="GitHub Collaboration" width="250px">
+
+<br><br>
+
+<h2>Conclusion</h2>
+
+<p>
+Git and GitHub are essential tools for every developer. They make coding safer, more organized, and easier to manage. Whether you work alone or in a large team, these tools help track every change, recover previous versions, and collaborate efficiently. Learning Git and GitHub early in your programming journey will improve your workflow, strengthen your portfolio, and increase your chances of becoming a professional software developer.
+</p>
+</body>
+</html>
